@@ -37,12 +37,18 @@ function updateScore() {
     document.getElementById("oversDisplay").innerText =
         overs + "." + ball;
 }
-
 function addRun(run) {
     score += run;
     balls++;
+
+    strikerRuns += run;
+    strikerBalls++;
+
     updateScore();
+    updateBatsman();
 }
+
+
 
 function wide() {
     score++;
@@ -58,4 +64,20 @@ function wicket() {
     wickets++;
     balls++;
     updateScore();
+}
+let strikerRuns = 0;
+let strikerBalls = 0;
+
+function updateBatsman() {
+
+    document.getElementById("strikerRuns").innerText = strikerRuns;
+    document.getElementById("strikerBalls").innerText = strikerBalls;
+
+    let sr = 0;
+
+    if (strikerBalls > 0) {
+        sr = ((strikerRuns / strikerBalls) * 100).toFixed(2);
+    }
+
+    document.getElementById("strikerSR").innerText = sr;
 }
