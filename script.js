@@ -23,3 +23,39 @@ if (document.getElementById("matchTitle")) {
     document.getElementById("matchTitle").innerText =
         team1 + " vs " + team2;
 }
+let score = 0;
+let wickets = 0;
+let balls = 0;
+
+function updateScore() {
+    document.getElementById("score").innerText = score;
+    document.getElementById("wickets").innerText = wickets;
+
+    let overs = Math.floor(balls / 6);
+    let ball = balls % 6;
+
+    document.getElementById("oversDisplay").innerText =
+        overs + "." + ball;
+}
+
+function addRun(run) {
+    score += run;
+    balls++;
+    updateScore();
+}
+
+function wide() {
+    score++;
+    updateScore();
+}
+
+function noBall() {
+    score++;
+    updateScore();
+}
+
+function wicket() {
+    wickets++;
+    balls++;
+    updateScore();
+}
