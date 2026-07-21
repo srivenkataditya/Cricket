@@ -19,9 +19,15 @@
 
 <h2 id="matchTitle"></h2>
 
-<h3 id="score">0/0</h3>
+<h2>
+Score:
+<span id="score">0</span>/<span id="wickets">0</span>
+</h2>
 
-<p id="oversDisplay">Overs : 0.0</p>
+<h3>
+Overs:
+<span id="oversDisplay">0.0</span>
+</h3>
 
 <hr>
 
@@ -31,10 +37,27 @@
 <label>Non-Striker</label>
 <input type="text" id="nonStriker">
 
-<label>Current Bowler</label>
+<label>Bowler</label>
 <input type="text" id="bowler">
 
-<button>Start Scoring</button>
+<br><br>
+
+<h3>Runs</h3>
+
+<button onclick="addRun(0)">0</button>
+<button onclick="addRun(1)">1</button>
+<button onclick="addRun(2)">2</button>
+<button onclick="addRun(3)">3</button>
+<button onclick="addRun(4)">4</button>
+<button onclick="addRun(6)">6</button>
+
+<br><br>
+
+<button onclick="wide()">Wide</button>
+
+<button onclick="noBall()">No Ball</button>
+
+<button onclick="wicket()">Wicket</button>
 
 </div>
 
