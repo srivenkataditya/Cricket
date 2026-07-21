@@ -13,10 +13,13 @@ document.getElementById("startMatch").addEventListener("click", function () {
     localStorage.setItem("team2", team2);
     localStorage.setItem("overs", overs);
 
-    alert(
-        "Match Created!\n\n" +
-        team1 + " vs " + team2 +
-        "\nOvers: " + overs +
-        "\n\nLive scoring page will be added in the next part."
-    );
+    window.location.href = "score.html";
 });
+
+if (document.getElementById("matchTitle")) {
+    const team1 = localStorage.getItem("team1");
+    const team2 = localStorage.getItem("team2");
+
+    document.getElementById("matchTitle").innerText =
+        team1 + " vs " + team2;
+}
