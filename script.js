@@ -1,5 +1,5 @@
-document.getElementById("startMatch").addEventListener("click", function () {
-
+if (document.getElementById("startMatch")) {
+    document.getElementById("startMatch").addEventListener("click", function () {
     const team1 = document.getElementById("team1").value.trim();
     const team2 = document.getElementById("team2").value.trim();
     const overs = document.getElementById("overs").value;
@@ -15,7 +15,7 @@ document.getElementById("startMatch").addEventListener("click", function () {
 
     window.location.href = "score.html";
 });
-
+}
 if (document.getElementById("matchTitle")) {
     const team1 = localStorage.getItem("team1");
     const team2 = localStorage.getItem("team2");
